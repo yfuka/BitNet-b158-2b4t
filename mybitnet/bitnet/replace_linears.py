@@ -1,7 +1,8 @@
 from torch import nn
 from .bitnet import BitLinear
+from transformers.activations import ReLUSquaredActivation
 
-activation_layers = [nn.SiLU, nn.ReLU, nn.GELU]
+activation_layers = [nn.SiLU, nn.ReLU, nn.GELU, ReLUSquaredActivation]
 
 def replace_linears_in_hf(model, parent=None):
     """
